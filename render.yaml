@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: sportz-live
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: SPORTMONKS_TOKEN
+        sync: false
+      - key: SPORTMONKS_URL
+        value: https://cricket.sportmonks.com/api/v2.0
+      - key: ARCJET_KEY
+        sync: false
+      - key: ARCJET_ENV
+        value: production
